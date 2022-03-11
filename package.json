@@ -1,0 +1,32 @@
+{
+  "name": "docker-api",
+  "version": "1.0.0",
+  "description": "This is an API for docker. It aims to create an api for docker",
+  "main": "src/index.ts",
+  "engines" : { 
+    "npm" : ">=8.5.4",
+    "node" : ">=16.14.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mariosenam/docker-api.git"
+  },
+  "keywords": [
+    "Docker",
+    "API",
+    "NodeJs",
+    "TypeScript"
+  ],
+  "author": "Loris Mario GOMEZ / Mocktar ISSA",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mariosenam/docker-api/issues"
+  },
+  "homepage": "https://github.com/mariosenam/docker-api#readme",
+  "devDependencies": {
+    "typescript": "^4.6.2"
+  }
+}
