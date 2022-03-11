@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "description": "This is an API for docker. It aims to create an api for docker",
   "main": "src/index.ts",
-  "engines" : { 
-    "npm" : ">=8.5.4",
-    "node" : ">=16.14.0"
+  "engines": {
+    "npm": ">=8.5.4",
+    "node": ">=16.14.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -27,6 +27,8 @@
   },
   "homepage": "https://github.com/mariosenam/docker-api#readme",
   "devDependencies": {
+    "@types/node": "^17.0.21",
+    "ts-node": "^10.7.0",
     "typescript": "^4.6.2"
   }
 }
