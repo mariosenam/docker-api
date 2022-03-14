@@ -1,4 +1,5 @@
 import { spawn, exec } from "child_process";
+import { lstat } from "fs";
 export class DockerContainer {
   // id: string;
   parseData(data: any): any {}
@@ -16,8 +17,7 @@ export class DockerContainer {
       "{{json .}}",
     ]);
     return new Promise<any[]>((resolve, reject) => {
-      let containers: any = "[",
-        error = "";
+      let containers = "";
       cmd.stdout.on("data", (chunk: any) => {
         try {
           containers += chunk;
@@ -27,12 +27,11 @@ export class DockerContainer {
         containers += chunk.toString();
       });
       cmd.stdout.on("end", () => {
-        const temp = containers.split("");
-        temp[temp.length - 2] = "]";
-        containers = temp.join("").replaceAll("'", '"');
-        resolve(JSON.parse(containers));
+        let data = containers.split("\n");
+        data.pop();
+        resolve(JSON.parse(`[${data.join(",")}]`));
       });
-      cmd.stderr.on("data", (chunk: any) => reject(chunk));
+      cmd.stderr.on("data", (chunk: any) => reject(chunk.toString()));
     });
   }
 }
