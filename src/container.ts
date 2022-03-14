@@ -1,8 +1,17 @@
 import { spawn, exec } from "child_process";
 import { lstat } from "fs";
 export class DockerContainer {
-  // id: string;
   static list(): Promise<any[]> {
+    /**
+     * List all containers running on the host
+     * @returns {Promise<any[]>}
+     * @memberof DockerContainer
+     * @example
+     * DockerContainer.list()
+     * .then((data) => {
+     *  console.log(data);
+     * })
+     */
     const cmd = spawn("docker", ["ps", "--format", "{{json .}}"]);
     return new Promise<any[]>((resolve, reject) => {
       let containers = "";

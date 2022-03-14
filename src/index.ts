@@ -13,7 +13,7 @@
 //   let obj = JSON.parse(data);
 //   console.log(obj);
 //   i++;
-  
+
 // });
 
 // ls.on('exit', (code) => {
@@ -26,8 +26,10 @@
 
 import { DockerContainer } from "./container";
 
-
 DockerContainer.list()
-  .then(data => {
+  .then((data) => {
     console.log(data);
-   }).catch(err => { console.log(err); });
+  })
+  .catch((err) => {
+    console.log(err);
+  });
