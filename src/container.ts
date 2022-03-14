@@ -19,11 +19,6 @@ export class DockerContainer {
     return new Promise<any[]>((resolve, reject) => {
       let containers = "";
       cmd.stdout.on("data", (chunk: any) => {
-        try {
-          containers += chunk;
-        } catch {
-          error += chunk;
-        }
         containers += chunk.toString();
       });
       cmd.stdout.on("end", () => {
